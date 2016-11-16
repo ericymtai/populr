@@ -6,6 +6,10 @@
   flex-wrap: wrap;
 }
 
+.track{
+  cursor: pointer;
+}
+
 .track-info{
   text-align: center;
 }
