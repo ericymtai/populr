@@ -80,14 +80,14 @@ function createTrackItem(track){
   var trackPopularity = $('<p>', {class: 'track__popularity'});
   var trackAlbum = $('<p>', {class: 'track__album'});
   var trackImage = $('<img>', {class: 'track__image'});
-  var btn = $('<button>', {class: 'play-song'});
+
 
   trackTitle.appendTo($(trackHtml));
   trackNumber.appendTo($(trackHtml));
   trackPopularity.appendTo($(trackHtml));
   trackAlbum.appendTo($(trackHtml));
   trackImage.appendTo($(trackHtml));
-  btn.appendTo($(trackHtml));
+
 
   $(trackHtml).attr('data-audio-url', track.preview_url);
   $(trackTitle).text('track name: ' + track.name);
