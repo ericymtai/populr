@@ -1,6 +1,11 @@
 
 var query;
 
+
+//make an audio object
+var currentSong = new Audio();
+
+
 //set the type of search we are doing (artis, album or track);
 var queryType = 'artist';
 
@@ -25,6 +30,7 @@ $searchForm.on('submit', function(event) {
   console.log('the artist the user searched for : ' + query);
 
 $(this).trigger('reset');
+$('#popular-tracks').html('');
 
   var a1 = $.ajax({
     //search the database with users requested artist
@@ -51,7 +57,6 @@ $(this).trigger('reset');
     showTopAlbums(data);
   });
 
-  $('#popular-tracks').html('');
 
 });
 
@@ -60,7 +65,12 @@ function showTopAlbums(albums){
   $.each(albums.tracks, function(index, el) {
     createTrackItem(el);
   });
-}
+
+};
+
+
+
+
 
 function createTrackItem(track){
 
@@ -70,13 +80,16 @@ function createTrackItem(track){
   var trackPopularity = $('<p>', {class: 'track__popularity'});
   var trackAlbum = $('<p>', {class: 'track__album'});
   var trackImage = $('<img>', {class: 'track__image'});
+  var btn = $('<button>', {class: 'play-song'});
 
   trackTitle.appendTo($(trackHtml));
   trackNumber.appendTo($(trackHtml));
   trackPopularity.appendTo($(trackHtml));
   trackAlbum.appendTo($(trackHtml));
   trackImage.appendTo($(trackHtml));
+  btn.appendTo($(trackHtml));
 
+  $(trackHtml).attr('data-audio-url', track.preview_url);
   $(trackTitle).text('track name: ' + track.name);
   $(trackNumber).text('track number: ' + track.track_number);
   $(trackPopularity).text('popularity: ' + track.popularity);
@@ -87,7 +100,25 @@ function createTrackItem(track){
 
   $(trackHtml).appendTo('#popular-tracks');
 
+};
+
+
+$(document).on('click', '.track', function(event) {
+  event.preventDefault();
+  /* Act on the event */
+  var songUrl = $(this).attr('data-audio-url');
+  playSong(songUrl);
+});
+
+
+function playSong(url) {
+  currentSong.src = url;
+  currentSong.play();
 }
+
+
+
+
 
 // <div class="track">
 //   <img src="#" alt="" class="track__image">
