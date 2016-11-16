@@ -24,7 +24,7 @@ $searchForm.on('submit', function(event) {
   //log what the user searched for
   console.log('the artist the user searched for : ' + query);
 
-  // getPopularArtist();
+$(this).trigger('reset');
 
   var a1 = $.ajax({
     //search the database with users requested artist
@@ -50,6 +50,8 @@ $searchForm.on('submit', function(event) {
     console.log(data)
     showTopAlbums(data);
   });
+
+  $('#popular-tracks').html('');
 
 });
 
