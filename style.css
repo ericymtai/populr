@@ -1,0 +1,11 @@
+/*popular tracks*/
+#popular-tracks{
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.track-info{
+  text-align: center;
+}

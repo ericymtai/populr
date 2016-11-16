@@ -75,19 +75,21 @@ function showTopAlbums(albums){
 function createTrackItem(track){
 
   var trackHtml = $('<div>', {class: 'track'});
+  var trackImage = $('<img>', {class: 'track__image'});
+  var trackInfo = $('<div>', {class: 'track-info'});
   var trackTitle = $('<p>', {class: 'track__title' });
   var trackNumber = $('<p>', {class: 'track__number'});
   var trackPopularity = $('<p>', {class: 'track__popularity'});
   var trackAlbum = $('<p>', {class: 'track__album'});
-  var trackImage = $('<img>', {class: 'track__image'});
 
 
-  trackTitle.appendTo($(trackHtml));
-  trackNumber.appendTo($(trackHtml));
-  trackPopularity.appendTo($(trackHtml));
-  trackAlbum.appendTo($(trackHtml));
+  trackTitle.appendTo($(trackInfo));
+  trackAlbum.appendTo($(trackInfo));
+  trackNumber.appendTo($(trackInfo));
+  trackPopularity.appendTo($(trackInfo));
+
   trackImage.appendTo($(trackHtml));
-
+  trackInfo.appendTo($(trackHtml));
 
   $(trackHtml).attr('data-audio-url', track.preview_url);
   $(trackTitle).text('track name: ' + track.name);
