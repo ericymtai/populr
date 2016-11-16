@@ -17,10 +17,30 @@
     <![endif]-->
   </head>
   <body>
+    <!--  form for artist search-->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-12">
+          <form class="artist-search" id="search-form">
+            <input type="text" name="artist">
+            <input type="submit" name="submit" value="search" class="btn btn-primary">
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <div id="popular-tracks">
+        
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- form for artist search -->
 
 
     <script src="https://cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/lodash/4.16.4/lodash.min.js" charset="utf-8"></script>
     <script src="script.js" charset="utf-8"></script>
   </body>
 </html>
