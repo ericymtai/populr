@@ -1,0 +1,53 @@
+#popular-tracks {
+  margin: 10% auto;
+}
+
+#popular-tracks .track {
+  width: 30%;
+  margin: 0 auto 7%;
+  justify-content: space-around;
+  flex: 3 33%;
+}
+
+#popular-tracks .track img {
+  display: block;
+  margin: 0 auto 3%;
+}
+
+#popular-tracks .track .track-info {
+  width: 100%;
+  margin: auto;
+}
+
+.track-info p {
+  width: 100%;
+  max-height: 30em;
+  color: #d6d8fd;
+  font-size: 16px;
+  margin: auto;
+}
+@media screen and (min-width: 1680px) {
+  #popular-tracks .track {
+    justify-content: space-between;
+    flex: 5 ;
+  }
+}
+@media screen and (min-width: 1380px) {
+  #popular-tracks .track {
+    justify-content: space-between;
+    flex: 4 ;
+  }
+}
+@media screen and (max-width: 970px) {
+  #popular-tracks .track {
+    margin: 0 auto 8%;
+    flex: 2 50%;
+  }
+}
+@media screen and (max-width: 680px) {
+  #popular-tracks .track {
+    margin: 0 auto 15%;
+    flex-direction: column;
+    flex: 1 100%;
+  }
+}
